@@ -6,8 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		114F39F35366C1C7B734B202 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE246D40ED546091519BE1C1 /* AppStateTests.swift */; };
+		B1D483FEA8043E8C235E70E7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A723A5D47776CF219370A27 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		262C4AD0A7FBF59A023747C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C350DB2FB3784B0010515E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55C350E22FB3784B0010515E;
+			remoteInfo = memoria;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		262EC9887E3D8C5B3EBFB28E /* memoriaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C350E32FB3784B0010515E /* memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A723A5D47776CF219370A27 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		CE246D40ED546091519BE1C1 /* AppStateTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -26,14 +44,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0ADFB0690413C13B0FA2313 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1D483FEA8043E8C235E70E7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03B5FD3A16DD0911EAB341C6 /* memoriaTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE246D40ED546091519BE1C1 /* AppStateTests.swift */,
+			);
+			path = memoriaTests;
+			sourceTree = "<group>";
+		};
 		55C350DA2FB3784B0010515E = {
 			isa = PBXGroup;
 			children = (
 				55C350E52FB3784B0010515E /* memoria */,
 				55C350E42FB3784B0010515E /* Products */,
+				DF5E84E672FCFD61E826A7C9 /* Frameworks */,
+				03B5FD3A16DD0911EAB341C6 /* memoriaTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,13 +77,48 @@
 			isa = PBXGroup;
 			children = (
 				55C350E32FB3784B0010515E /* memoria.app */,
+				262EC9887E3D8C5B3EBFB28E /* memoriaTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7E621CD5996B46F6AE9BB35D /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				7A723A5D47776CF219370A27 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		DF5E84E672FCFD61E826A7C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E621CD5996B46F6AE9BB35D /* OS X */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		01EFA55EBED7BE539CAABCE4 /* memoriaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECD7D632311C0EDEFC5ED45F /* Build configuration list for PBXNativeTarget "memoriaTests" */;
+			buildPhases = (
+				0A316DC04EFA3E83F5F00D1C /* Sources */,
+				B0ADFB0690413C13B0FA2313 /* Frameworks */,
+				876EB1505D8E905C00660F87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C1402EA9DE5E2ADD8E410E7 /* PBXTargetDependency */,
+			);
+			name = memoriaTests;
+			productName = memoriaTests;
+			productReference = 262EC9887E3D8C5B3EBFB28E /* memoriaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		55C350E22FB3784B0010515E /* memoria */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C350EE2FB3784D0010515E /* Build configuration list for PBXNativeTarget "memoria" */;
@@ -64,8 +135,6 @@
 				55C350E52FB3784B0010515E /* memoria */,
 			);
 			name = memoria;
-			packageProductDependencies = (
-			);
 			productName = memoria;
 			productReference = 55C350E32FB3784B0010515E /* memoria.app */;
 			productType = "com.apple.product-type.application";
@@ -100,6 +169,7 @@
 			projectRoot = "";
 			targets = (
 				55C350E22FB3784B0010515E /* memoria */,
+				01EFA55EBED7BE539CAABCE4 /* memoriaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -112,9 +182,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		876EB1505D8E905C00660F87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A316DC04EFA3E83F5F00D1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				114F39F35366C1C7B734B202 /* AppStateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55C350DF2FB3784B0010515E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +208,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C1402EA9DE5E2ADD8E410E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = memoria;
+			target = 55C350E22FB3784B0010515E /* memoria */;
+			targetProxy = 262C4AD0A7FBF59A023747C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		55C350EC2FB3784D0010515E /* Debug */ = {
@@ -305,6 +399,58 @@
 			};
 			name = Release;
 		};
+		640FDC9614C39B7C47589F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/memoria.app/Contents/MacOS",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/memoria.app/Contents/MacOS/memoria.debug.dylib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoria.macos.app.memoria.memoriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		A98E49DBF1326F7A94113A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/memoria.app/Contents/MacOS",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/memoria.app/Contents/MacOS/memoria.debug.dylib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoria.macos.app.memoria.memoriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -322,6 +468,15 @@
 			buildConfigurations = (
 				55C350EF2FB3784D0010515E /* Debug */,
 				55C350F02FB3784D0010515E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECD7D632311C0EDEFC5ED45F /* Build configuration list for PBXNativeTarget "memoriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98E49DBF1326F7A94113A06 /* Release */,
+				640FDC9614C39B7C47589F25 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

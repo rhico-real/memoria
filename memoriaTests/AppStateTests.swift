@@ -16,4 +16,16 @@ final class AppStateTests: XCTestCase {
             XCTFail("Expected sidebar to be visible by default")
         }
     }
+
+    func testToggleSidebarVisibilityFlipsTheFlag() async {
+        let isVisible = await MainActor.run { () -> Bool in
+            let state = AppState()
+            state.toggleSidebarVisibility()
+            return state.sidebarIsVisible
+        }
+
+        if isVisible {
+            XCTFail("Expected sidebar visibility to flip to false")
+        }
+    }
 }

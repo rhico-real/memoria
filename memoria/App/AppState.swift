@@ -13,4 +13,8 @@ enum SidebarSection: Hashable {
 final class AppState: ObservableObject {
     @Published var selectedSidebarSection: SidebarSection = .allFiles
     @Published var sidebarIsVisible = true
+
+    func toggleSidebarVisibility() {
+        sidebarIsVisible.toggle()
+    }
 }

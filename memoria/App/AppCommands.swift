@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct AppCommands: Commands {
-    let appState: AppState
+    @ObservedObject var appState: AppState
 
     var body: some Commands {
-        CommandMenu("View") {
+        CommandGroup(replacing: .newItem) { }
+        CommandGroup(after: .sidebar) {
             Button(appState.sidebarIsVisible ? "Hide Sidebar" : "Show Sidebar") {
-                appState.sidebarIsVisible.toggle()
+                appState.toggleSidebarVisibility()
             }
             .keyboardShortcut("s", modifiers: [.command, .control])
         }

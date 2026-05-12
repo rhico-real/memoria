@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		114F39F35366C1C7B734B202 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE246D40ED546091519BE1C1 /* AppStateTests.swift */; };
+		2B8422DB5A1F4AA083CCAA4A /* MemoriaRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22A23038D6465DA4F63A5B /* MemoriaRepositoryTests.swift */; };
+		4AEBB6CDCE5342E2A4BC455A /* StubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA570B8A3A40248B7B7384 /* StubRepository.swift */; };
+		6D11D4B37D344BC88BA690C9 /* FileRecordFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD161098C34EE2A297ED29 /* FileRecordFixtures.swift */; };
 		B1D483FEA8043E8C235E70E7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A723A5D47776CF219370A27 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,9 +26,12 @@
 
 /* Begin PBXFileReference section */
 		262EC9887E3D8C5B3EBFB28E /* memoriaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EAD161098C34EE2A297ED29 /* FileRecordFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRecordFixtures.swift; sourceTree = "<group>"; };
 		55C350E32FB3784B0010515E /* memoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A723A5D47776CF219370A27 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Cocoa.framework; sourceTree = SDKROOT; };
+		5EAA570B8A3A40248B7B7384 /* StubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRepository.swift; sourceTree = "<group>"; };
+		7A723A5D47776CF219370A27 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cocoa.framework; sourceTree = SDKROOT; };
 		CE246D40ED546091519BE1C1 /* AppStateTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
+		EA22A23038D6465DA4F63A5B /* MemoriaRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -59,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				CE246D40ED546091519BE1C1 /* AppStateTests.swift */,
+				EA22A23038D6465DA4F63A5B /* MemoriaRepositoryTests.swift */,
+				9F79CE4719F44A6A82A46998 /* TestSupport */,
 			);
 			path = memoriaTests;
 			sourceTree = "<group>";
@@ -88,6 +96,15 @@
 				7A723A5D47776CF219370A27 /* Cocoa.framework */,
 			);
 			name = "OS X";
+			sourceTree = "<group>";
+		};
+		9F79CE4719F44A6A82A46998 /* TestSupport */ = {
+			isa = PBXGroup;
+			children = (
+				3EAD161098C34EE2A297ED29 /* FileRecordFixtures.swift */,
+				5EAA570B8A3A40248B7B7384 /* StubRepository.swift */,
+			);
+			path = TestSupport;
 			sourceTree = "<group>";
 		};
 		DF5E84E672FCFD61E826A7C9 /* Frameworks */ = {
@@ -197,6 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				114F39F35366C1C7B734B202 /* AppStateTests.swift in Sources */,
+				2B8422DB5A1F4AA083CCAA4A /* MemoriaRepositoryTests.swift in Sources */,
+				4AEBB6CDCE5342E2A4BC455A /* StubRepository.swift in Sources */,
+				6D11D4B37D344BC88BA690C9 /* FileRecordFixtures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +381,7 @@
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = None;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -392,7 +412,7 @@
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = None;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;

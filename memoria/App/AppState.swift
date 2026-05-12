@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import AppKit
 import SwiftUI
 
 enum SidebarSection: Hashable {
@@ -38,11 +39,33 @@ final class AppState: ObservableObject {
     }
 
     func presentFileImporter() {
-        isPresentingFileImporter = true
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = true
+        panel.canChooseDirectories = false
+        panel.canChooseFiles = true
+        panel.canCreateDirectories = false
+        panel.resolvesAliases = true
+        panel.title = "Import Files"
+        panel.prompt = "Import"
+        panel.begin { [weak self] response in
+            guard response == .OK else { return }
+            self?.importFiles(urls: panel.urls)
+        }
     }
 
     func presentFolderImporter() {
-        isPresentingFolderImporter = true
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = false
+        panel.canCreateDirectories = false
+        panel.resolvesAliases = true
+        panel.title = "Import Folder"
+        panel.prompt = "Import"
+        panel.begin { [weak self] response in
+            guard response == .OK else { return }
+            self?.importFiles(urls: panel.urls)
+        }
     }
 
     func importFiles(urls: [URL]) {

@@ -64,29 +64,9 @@ struct RootSplitView: View {
                     }
                 }
             }
-            .fileImporter(
-                isPresented: $appState.isPresentingFileImporter,
-                allowedContentTypes: [.item],
-                allowsMultipleSelection: true
-            ) { result in
-                switch result {
-                case .success(let urls):
-                    appState.importFiles(urls: urls)
-                case .failure(let error):
-                    appState.importErrorMessage = error.localizedDescription
-                }
-            }
-            .fileImporter(
-                isPresented: $appState.isPresentingFolderImporter,
-                allowedContentTypes: [.folder],
-                allowsMultipleSelection: false
-            ) { result in
-                switch result {
-                case .success(let urls):
-                    appState.importFiles(urls: urls)
-                case .failure(let error):
-                    appState.importErrorMessage = error.localizedDescription
-                }
+            .dropDestination(for: URL.self) { urls, _ in
+                appState.importFiles(urls: urls)
+                return true
             }
         } detail: {
             Group {

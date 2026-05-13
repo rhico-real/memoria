@@ -13,14 +13,31 @@ struct RootSplitView: View {
 
     var body: some View {
         NavigationSplitView(columnVisibility: columnVisibilityBinding) {
-            List(selection: $appState.selectedSidebarSection) {
-                Text("All Files").tag(SidebarSection.allFiles)
-                Text("Tags").tag(SidebarSection.tags)
-                Text("Dates").tag(SidebarSection.dates)
-                Text("File Types").tag(SidebarSection.fileTypes)
-                Text("Saved Views").tag(SidebarSection.savedViews)
+            VStack(spacing: 12) {
+                HStack(spacing: 10) {
+                    Image("MemoriaLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 26, height: 26)
+                        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+
+                    Text("Memoria")
+                        .font(.headline.weight(.semibold))
+
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+
+                List(selection: $appState.selectedSidebarSection) {
+                    Text("All Files").tag(SidebarSection.allFiles)
+                    Text("Tags").tag(SidebarSection.tags)
+                    Text("Dates").tag(SidebarSection.dates)
+                    Text("File Types").tag(SidebarSection.fileTypes)
+                    Text("Saved Views").tag(SidebarSection.savedViews)
+                }
+                .listStyle(.sidebar)
             }
-            .listStyle(.sidebar)
         } content: {
             VStack(spacing: 0) {
                 HStack {
